@@ -11,24 +11,24 @@ class DatabaseStatus extends Command
 {
     protected function configure()
     {
-        // 指令配置
+        // 指令設定
         $this->setName('db:status')
             ->setDescription('Show database status and table information');
     }
 
     protected function execute(Input $input, Output $output)
     {
-        $output->writeln('📊 數據庫狀態檢查');
+        $output->writeln('📊 資料庫狀態檢查');
         $output->writeln('==================');
 
         try {
-            // 檢查數據庫連接
+            // 檢查資料庫連線
             $this->checkConnection($output);
 
             // 檢查表結構
             $this->checkTables($output);
 
-            // 檢查數據統計
+            // 檢查資料統計
             $this->checkDataStats($output);
         } catch (\Exception $e) {
             $output->writeln('❌ 檢查失敗: ' . $e->getMessage());
@@ -39,24 +39,24 @@ class DatabaseStatus extends Command
     {
         try {
             $config = config('database.connections.mysql');
-            $output->writeln("🔗 數據庫連接信息:");
+            $output->writeln("🔗 資料庫連線資訊:");
             $output->writeln("   主機: {$config['hostname']}:{$config['hostport']}");
-            $output->writeln("   數據庫: {$config['database']}");
-            $output->writeln("   用戶: {$config['username']}");
-            $output->writeln("   字符集: {$config['charset']}");
+            $output->writeln("   資料庫: {$config['database']}");
+            $output->writeln("   使用者: {$config['username']}");
+            $output->writeln("   字元集: {$config['charset']}");
 
             // 測試連接
             Db::query('SELECT 1');
-            $output->writeln("   狀態: ✅ 連接正常");
+            $output->writeln("   狀態: ✅ 連線正常");
             $output->writeln("");
         } catch (\Exception $e) {
-            $output->writeln("   狀態: ❌ 連接失敗 - " . $e->getMessage());
+            $output->writeln("   狀態: ❌ 連線失敗 - " . $e->getMessage());
         }
     }
 
     private function checkTables($output)
     {
-        $output->writeln("📋 數據表信息:");
+        $output->writeln("📋 資料表資訊:");
 
         $tables = ['messages'];
 
@@ -77,7 +77,7 @@ class DatabaseStatus extends Command
 
     private function checkDataStats($output)
     {
-        $output->writeln("📈 數據統計:");
+        $output->writeln("📈 資料統計:");
 
         try {
             $messageCount = Db::name('messages')->count();

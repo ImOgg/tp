@@ -72,8 +72,13 @@ DB_PASS =
 DB_PORT = 3306
 DB_CHARSET = utf8mb4
 
-DEFAULT_LANG = zh-cn
+DEFAULT_LANG = zh-tw
 ```
+
+**語言設定說明：**
+- `DEFAULT_LANG = zh-tw` - 設定為台灣繁體中文
+- 如需使用簡體中文，可改為 `zh-cn`
+- HTML 模板已設定為 `lang="zh-TW"`
 
 ### 4. 初始化數據庫
 ```bash

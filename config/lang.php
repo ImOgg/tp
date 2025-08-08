@@ -1,29 +1,31 @@
 <?php
 // +----------------------------------------------------------------------
-// | 多语言设置
+// | 多語言設置
 // +----------------------------------------------------------------------
 
 return [
-    // 默认语言
-    'default_lang'        => env('DEFAULT_LANG', 'zh-cn'),
-    // 自动侦测浏览器语言
+    // 預設語言
+    'default_lang'        => env('DEFAULT_LANG', 'zh-tw'),
+    // 自動偵測瀏覽器語言
     'auto_detect_browser' => true,
-    // 允许的语言列表
+    // 允許的語言列表
     'allow_lang_list'     => [],
-    // 多语言自动侦测变量名
+    // 多語言自動偵測變數名
     'detect_var'          => 'lang',
-    // 是否使用Cookie记录
+    // 是否使用Cookie記錄
     'use_cookie'          => true,
-    // 多语言cookie变量
+    // 多語言cookie變數
     'cookie_var'          => 'think_lang',
-    // 多语言header变量
+    // 多語言header變數
     'header_var'          => 'think-lang',
-    // 扩展语言包
+    // 擴展語言包
     'extend_list'         => [],
-    // Accept-Language转义为对应语言包名称
+    // Accept-Language轉義為對應語言包名稱
     'accept_language'     => [
         'zh-hans-cn' => 'zh-cn',
+        'zh-hant-tw' => 'zh-tw',
+        'zh-tw' => 'zh-tw',
     ],
-    // 是否支持语言分组
+    // 是否支援語言分組
     'allow_group'         => false,
 ];
