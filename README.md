@@ -227,6 +227,7 @@ class CreateUsersTable extends Migrator
               ->create();
     }
 }
+```
 
 ### 數據表結構
 
